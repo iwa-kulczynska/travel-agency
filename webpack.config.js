@@ -32,6 +32,7 @@ const baseConfig = () => ({
 });
 
 const devConfig = () => ({
+  devtool: 'source-map',
   module: {
     rules: [
       {
