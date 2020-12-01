@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const OrderSummary = ({tripCost, options}) => (
   <div>
-    <h2 className={styles.component}>Total<strong>{calculateTotal(formatPrice(tripCost), options)}$</strong></h2>
+    <h2 className={styles.component}>Total <strong>${calculateTotal(formatPrice(tripCost), options)}</strong></h2>
   </div>
 );
 
