@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import OrderOption from './OrderOption';
+import DatePicker from 'react-datepicker';
 
 describe('Component OrderOption', () => {
   it('should render without crashing', () => {
@@ -84,7 +85,6 @@ for(let type in optionTypes){
     /* common tests */
     it(`renders ${optionTypes[type]}`, () => {
       expect(subcomponent).toBeTruthy();
-      //expect(subcomponent.length).toBe(1);
     });
 
     /* type-specific tests */
@@ -115,7 +115,6 @@ for(let type in optionTypes){
         /* tests for icon */   
         it('contains icons', () => {
           const select = renderedSubcomponent.find('Icon');
-          //console.log(renderedSubcomponent.debug());
           expect(select.length).toBe(3);
         });
 
@@ -172,13 +171,13 @@ for(let type in optionTypes){
       case 'date': {
         /* tests for date */
         it('contains DatePicker', () => {
-          const datePicker = renderedSubcomponent.find('DatePicker');
+          const datePicker = renderedSubcomponent.find(DatePicker);
           console.log(renderedSubcomponent.debug());
           expect(datePicker.length).toBe(1);
         });
 
         it('should run setOrderOption function on change', () => {
-          renderedSubcomponent.find('DatePicker').simulate('change', testValue );
+          renderedSubcomponent.find(DatePicker).simulate('change', testValue );
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
         });
