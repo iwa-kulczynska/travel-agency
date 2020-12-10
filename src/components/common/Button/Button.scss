@@ -24,4 +24,8 @@
       background: darken($color-primary, 5%);
     }
   }
+
+  &:disabled {
+    background: gray;
+  }
 }
